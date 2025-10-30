@@ -1,0 +1,95 @@
+name: untitled1
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #  Icons & Design
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.10+1
+  vector_graphics: ^1.1.12
+  vector_graphics_compiler: ^1.1.12
+
+  #  Responsive UI
+  flutter_screenutil: ^5.9.3
+  auto_size_text: ^3.0.0
+
+  #  Localization / Translation
+  easy_localization: ^3.0.8
+
+  #  State Management
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.7
+  reactive_forms: ^16.1.1
+
+  #  Navigation
+  go_router: ^14.6.3
+
+  #  Files & Storage
+  path_provider: ^2.1.5
+  shared_preferences: ^2.3.3
+
+  #  Permissions & Media
+  permission_handler: ^11.3.1
+  photo_view: ^0.15.0
+
+  #  Networking
+  http: ^1.2.2
+
+  #  Text utilities
+  text_scroll: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.6
+  flutter_gen_runner: ^5.0.3
+  flutter_launcher_icons: ^0.14.4
+  rename: ^3.1.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/png/auth/Apple.png
+    - assets/images/png/auth/Google.png
+    - assets/images/svg/backbutton.svg
+    - assets/translation/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf
+          style: italic
+        - asset: assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf
+
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/poppins/Poppins-Black.ttf
+        - asset: assets/fonts/poppins/Poppins-Bold.ttf
+        - asset: assets/fonts/poppins/Poppins-Regular.ttf
+        - asset: assets/fonts/poppins/Poppins-Italic.ttf
+          style: italic
+
+flutter_gen:
+  output: lib/gen/
+  line_length: 120
+  integrations:
+    flutter_svg: true
+    rive: true
+  assets:
+    enabled: true
+  fonts:
+    enabled: true
+  colors:
+    enabled: false
