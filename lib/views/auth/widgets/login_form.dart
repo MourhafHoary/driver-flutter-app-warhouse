@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../core/component/custom_filed_button.dart';
 import '../../../core/component/custom_text_filed.dart';
 import '../../../core/locallization/app_text.dart';

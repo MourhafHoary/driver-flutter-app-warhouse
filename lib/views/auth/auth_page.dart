@@ -1,13 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled1/core/theme/app_colors.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
 import 'package:untitled1/views/auth/widgets/button_back.dart';
 import 'package:untitled1/views/auth/widgets/additional_login.dart';
 import 'package:untitled1/views/auth/widgets/login_form.dart';
 import 'package:untitled1/views/auth/widgets/or_divider.dart';
-import 'package:untitled1/views/auth/auth_page.dart';
-import 'package:untitled1/views/auth/widgets/tap_selector.dart'; // import the new widget
+import 'package:untitled1/views/auth/widgets/tap_selector.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});

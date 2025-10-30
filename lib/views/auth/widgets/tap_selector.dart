@@ -4,7 +4,7 @@ import 'package:untitled1/core/theme/app_colors.dart';
 
 class TapSelector extends StatelessWidget {
   final bool isLogin;
-  final ValueChanged<bool> onChanged; // callback when user switches tab
+  final ValueChanged<bool> onChanged;
 
   const TapSelector({
     super.key,
