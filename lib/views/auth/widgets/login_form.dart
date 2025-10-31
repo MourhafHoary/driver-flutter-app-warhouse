@@ -1,5 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:untitled1/translations/locale_keys.g.dart';
 import '../../../core/component/custom_filed_button.dart';
 import '../../../core/component/custom_text_filed.dart';
 import '../../../core/locallization/app_text.dart';
@@ -13,33 +15,33 @@ class LoginForm extends StatelessWidget {
     return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         AppText('Your Email', fontFamily: 'Inter',style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),),
+         AppText(LocaleKeys.login_email.tr(), fontFamily: 'Inter',style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),),
         SizedBox(height: 8.h),
         const CustomTextFiled(),
         SizedBox(height: 16.h,),
-        const AppText('Password', fontFamily: 'Inter',),
+        AppText(LocaleKeys.login_password.tr(), fontFamily: 'Inter',),
         SizedBox(height: 8.h,),
         const CustomTextFiled(),
         SizedBox(height: 12.h),
         Row(
           children: [
-            const AppText(
-              'Wrong password',
+             AppText(
+              LocaleKeys.login_wrong.tr(),
               fontFamily: 'Inter',
               style: TextStyle(color: AppColors.surface),
             ),
             SizedBox(width: 119.w),
-            const InkWell(
+             InkWell(
                 child: AppText(
-                  'Forget password?',
+                  LocaleKeys.login_forget.tr(),
                   fontFamily: 'Inter',
                   style: TextStyle(color: AppColors.primary),
                 ))
           ],
         ),
         SizedBox(height: 18.h,),
-        const CustomFiledButton(
-          text: 'Continue',
+         CustomFiledButton(
+          text: LocaleKeys.login_continue.tr(),
         ),
       ],
     );

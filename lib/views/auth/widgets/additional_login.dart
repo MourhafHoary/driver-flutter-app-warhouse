@@ -1,8 +1,10 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/component/custom_outline.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../gen/assets.gen.dart';
+import '../../../translations/locale_keys.g.dart';
 
 class AdditionalLogin extends StatelessWidget {
   const AdditionalLogin({super.key});
@@ -12,20 +14,22 @@ class AdditionalLogin extends StatelessWidget {
     return Column(
       children: [
         CustomOutline(
-            text: 'Login With Apple',
+            text: LocaleKeys.login_apple.tr(),
             imagebath: Assets.images.png.auth.apple.path),
         const SizedBox(height: 16),
         CustomOutline(
-            text: 'Login with Google',
+            text: LocaleKeys.login_google.tr(),
             imagebath: Assets.images.png.auth.google.path),
         const SizedBox(height: 36),
-        const Row(
+         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Don't have an account? "),
+            Text(
+              LocaleKeys.login_account.tr(),
+            ),
             InkWell(
                 child: Text(
-                  "SignUp",
+                  LocaleKeys.login_signup.tr(),
                   style: TextStyle(color: AppColors.primary),
                 ))
           ],

@@ -1,6 +1,8 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/core/locallization/app_text.dart';
 import 'package:untitled1/core/theme/app_colors.dart';
+import 'package:untitled1/translations/locale_keys.g.dart';
 
 class TapSelector extends StatelessWidget {
   final bool isLogin;
@@ -29,7 +31,7 @@ class TapSelector extends StatelessWidget {
                   fontFamily: 'Poppins',
                   color: isLogin ? AppColors.primary : Colors.grey,
                 ),
-                child: const AppText('Login', fontFamily: 'Poppins',),
+                child:  AppText(LocaleKeys.login_Login.tr(), fontFamily: 'Poppins',),
               ),
               const SizedBox(height: 6),
               AnimatedContainer(
@@ -54,7 +56,7 @@ class TapSelector extends StatelessWidget {
                   fontFamily: 'Poppins',
                   color: !isLogin ? AppColors.primary : Colors.grey,
                 ),
-                child: const Text('SignUp'),
+                child:  Text(LocaleKeys.login_signup.tr()),
               ),
               const SizedBox(height: 6),
               AnimatedContainer(

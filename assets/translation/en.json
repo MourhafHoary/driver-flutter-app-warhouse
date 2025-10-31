@@ -2,7 +2,16 @@
   "login": {
     "Login": "login",
     "pageContentTitle": "Login Page Content",
-    "email": "Your Email"
+    "email": "Your Email",
+    "password" : "Password",
+    "wrong" : "Wrong password",
+    "forget" : "Forget password?",
+    "continue" : "Continue",
+    "or" : "Or",
+    "apple" : "Login With Apple",
+    "google" : "Login With Google",
+    "account" : "Don't have an account?",
+    "signup" : "SignUp"
   }
 
 
