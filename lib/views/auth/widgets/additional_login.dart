@@ -21,19 +21,7 @@ class AdditionalLogin extends StatelessWidget {
             text: LocaleKeys.login_google.tr(),
             imagebath: Assets.images.png.auth.google.path),
         const SizedBox(height: 36),
-         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              LocaleKeys.login_account.tr(),
-            ),
-            InkWell(
-                child: Text(
-                  LocaleKeys.login_signup.tr(),
-                  style: TextStyle(color: AppColors.primary),
-                ))
-          ],
-        ),
+
       ],
     );
   }

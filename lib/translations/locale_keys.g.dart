@@ -15,6 +15,9 @@ abstract class  LocaleKeys {
   static const login_google = 'login.google';
   static const login_account = 'login.account';
   static const login_signup = 'login.signup';
+  static const login_username = 'login.username';
+  static const login_confirm = 'login.confirm';
+  static const login_please = 'login.please';
   static const login = 'login';
 
 }

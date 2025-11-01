@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:untitled1/core/routes/app_routes.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
 import '../../../core/component/custom_filed_button.dart';
 import '../../../core/component/custom_text_filed.dart';
@@ -32,6 +34,9 @@ class LoginForm extends StatelessWidget {
             ),
             SizedBox(width: 119.w),
              InkWell(
+               onTap: (){
+                 context.push(AppRoutes.forget);
+               },
                 child: AppText(
                   LocaleKeys.login_forget.tr(),
                   fontFamily: 'Inter',

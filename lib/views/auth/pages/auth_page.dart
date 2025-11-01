@@ -5,6 +5,7 @@ import 'package:untitled1/views/auth/widgets/button_back.dart';
 import 'package:untitled1/views/auth/widgets/additional_login.dart';
 import 'package:untitled1/views/auth/widgets/login_form.dart';
 import 'package:untitled1/views/auth/widgets/or_divider.dart';
+import 'package:untitled1/views/auth/widgets/signup_form.dart';
 import 'package:untitled1/views/auth/widgets/tap_selector.dart';
 
 class AuthPage extends StatefulWidget {
@@ -78,10 +79,10 @@ class AuthPageContent extends StatelessWidget {
         const AdditionalLogin(),
       ],
     )
-        : const Column(
+        : Column(
       children: [
         Text(
-          'SignUp Content',
+          LocaleKeys.login_signup.tr(),
           style: TextStyle(
             fontSize: 22,
             fontWeight: FontWeight.bold,
@@ -89,6 +90,7 @@ class AuthPageContent extends StatelessWidget {
           ),
         ),
         // SignUpForm(),
+        SignUpForm(),
         SizedBox(height: 43),
         OrDivider(),
         SizedBox(height: 35),

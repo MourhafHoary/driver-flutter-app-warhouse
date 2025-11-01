@@ -11,7 +11,10 @@
     "apple" : "Login With Apple",
     "google" : "Login With Google",
     "account" : "Don't have an account?",
-    "signup" : "SignUp"
+    "signup" : "SignUp",
+    "username" : "UserName",
+    "confirm" : "Confirm Password",
+    "please" : "Please enter your email to reset the password"
   }
 
 

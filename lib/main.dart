@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:untitled1/views/auth/pages/auth_page.dart';
-
+import 'core/routes/app_router.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-
   await EasyLocalization.ensureInitialized();
 
   runApp(
@@ -29,16 +26,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(428, 926), //*Basic design based on the figma styles
-      builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        // 🔹 Add localization delegates and locale here:
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-
-        home: const AuthPage(),
-      ),
+      designSize: const Size(428, 926),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routerConfig: appRouter,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
+          theme: ThemeData(
+            useMaterial3: true,
+            colorSchemeSeed: Colors.blue,
+          ),
+        );
+      },
     );
   }
 }
