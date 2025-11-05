@@ -17,7 +17,14 @@ class CustomFiledButton extends StatelessWidget {
         ),
         width: 376.w,
         height: 56.h,
-        child: Center(child: Text(text,style:  TextStyle(color: Colors.white, fontSize: 16.sp),)),
+        child: Center(child: Text(text,
+          style:  TextStyle(
+              color: Colors.white,
+              fontSize: 16.sp,
+              fontFamily: "Inter"
+              ,fontWeight: FontWeight.bold)
+          ,)
+        ),
       ),
     );
   }

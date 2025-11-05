@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 import 'package:untitled1/views/auth/pages/auth_page.dart';
+import 'package:untitled1/views/auth/pages/check_your_email.dart';
 import 'package:untitled1/views/auth/pages/forgetpassword_page.dart';
+import 'package:untitled1/views/auth/pages/password_reset.dart';
 
 import 'app_routes.dart';
 
@@ -16,6 +18,14 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: AppRoutes.forget,
       builder: (context, state) => const ForgetPassword(),
+    ),
+    GoRoute(
+        path: AppRoutes.check,
+        builder: (context, state) => const CheckYourEmail(),
+    ),
+    GoRoute(
+      path: AppRoutes.passrest,
+      builder: (context, state) => const PasswordReset(),
     ),
   ],
 );

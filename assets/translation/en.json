@@ -14,7 +14,13 @@
     "signup" : "SignUp",
     "username" : "UserName",
     "confirm" : "Confirm Password",
-    "please" : "Please enter your email to reset the password"
+    "please" : "Please enter your email to reset the password",
+    "reset" : "Reset Password",
+    "check" : "Check your email" ,
+    "code" : "We sent a reset link to enter 5 digit code that mentioned in the email",
+    "verify" : "Verify Code",
+    "emaily" : "Haven’t got the email yet?",
+    "resend" : "Resend email"
   }
 
 

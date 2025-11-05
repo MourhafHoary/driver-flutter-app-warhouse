@@ -47,6 +47,8 @@ dependencies:
   #  Text utilities
   text_scroll: any
 
+  flutter_otp_text_field: ^1.5.1+1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

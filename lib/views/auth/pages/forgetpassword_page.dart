@@ -1,5 +1,11 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:untitled1/core/component/custom_filed_button.dart';
+import 'package:untitled1/core/component/custom_text_filed.dart';
 import 'package:untitled1/core/locallization/app_text.dart';
+import 'package:untitled1/core/routes/app_routes.dart';
+import 'package:untitled1/core/theme/app_colors.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
 import 'package:untitled1/views/auth/widgets/button_back.dart';
 
@@ -10,25 +16,41 @@ class ForgetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body:
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        SizedBox(height: 48),
-        Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Align(child: ButtonBack(),alignment: Alignment.centerLeft),
-        ),
-        SizedBox(height: 26),
-        Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: AppText(
+      Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          SizedBox(height: 48),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(child: ButtonBack(),alignment: Alignment.centerLeft),
+          ),
+          SizedBox(height: 26),
+          AppText(
               LocaleKeys.login_forget, fontFamily: 'Poppins',
               style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
           ),
-        ),
-        SizedBox(height: 18),
-        AppText(LocaleKeys.login_please, fontFamily: 'Inter')
-      ],
-    ));
+          SizedBox(height: 18),
+          AppText(LocaleKeys.login_please, fontFamily: 'Inter',
+          style: TextStyle(fontSize: 16 , fontWeight: FontWeight.bold,color: AppColors.gray),
+          ),
+          SizedBox(height: 30),
+          AppText(
+              LocaleKeys.login_email.tr(), fontFamily: 'Inter'
+          ,style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 8),
+          CustomTextFiled(),
+          SizedBox(height: 26),
+          InkWell(child: CustomFiledButton(text: LocaleKeys.login_reset.tr())
+            ,onTap: (){
+            context.push(AppRoutes.check) ;
+            },
+          )
+        ],
+            ),
+      )
+    );
   }
 }
