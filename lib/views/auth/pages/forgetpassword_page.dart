@@ -7,7 +7,7 @@ import 'package:untitled1/core/locallization/app_text.dart';
 import 'package:untitled1/core/routes/app_routes.dart';
 import 'package:untitled1/core/theme/app_colors.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
-import 'package:untitled1/views/auth/widgets/button_back.dart';
+import 'package:untitled1/core/component/button_back.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -15,6 +15,9 @@ class ForgetPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          actions: const [ButtonBack()],
+        ),
       body:
       Padding(
         padding: const EdgeInsets.all(24.0),
@@ -22,10 +25,6 @@ class ForgetPassword extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           SizedBox(height: 48),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Align(child: ButtonBack(),alignment: Alignment.centerLeft),
-          ),
           SizedBox(height: 26),
           AppText(
               LocaleKeys.login_forget, fontFamily: 'Poppins',
@@ -41,7 +40,9 @@ class ForgetPassword extends StatelessWidget {
           ,style: TextStyle(fontSize: 20 , fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 8),
-          CustomTextFiled(),
+          const CustomTextFiled(
+            keyBoardType: TextInputType.emailAddress,
+          ),
           SizedBox(height: 26),
           InkWell(child: CustomFiledButton(text: LocaleKeys.login_reset.tr())
             ,onTap: (){

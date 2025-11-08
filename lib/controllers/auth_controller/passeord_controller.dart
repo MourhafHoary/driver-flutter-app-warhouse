@@ -1,0 +1,14 @@
+import 'package:get/get.dart' ;
+
+class PasswordController extends GetxController {
+  var isObscureNew = true.obs;
+  var isObscureConfirm = true.obs;
+
+  void toggleNew() {
+    isObscureNew.value = !isObscureNew.value;
+  }
+
+  void toggleConfirm() {
+    isObscureConfirm.value = !isObscureConfirm.value;
+  }
+}

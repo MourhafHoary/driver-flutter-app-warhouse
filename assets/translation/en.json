@@ -20,7 +20,15 @@
     "code" : "We sent a reset link to enter 5 digit code that mentioned in the email",
     "verify" : "Verify Code",
     "emaily" : "Haven’t got the email yet?",
-    "resend" : "Resend email"
+    "resend" : "Resend email",
+    "Sucpass" : "Your password has been successfully reset click confirm to set a new password",
+    "sure" : "Confirm",
+    "setpass" : "Set a new password",
+    "createpass" : "Create a new password. Ensure it differs from previous ones for security",
+    "newpass" : "Password",
+    "confirmpass" : "Confirm Password",
+    "updatepass" : "Update Password"
+
   }
 
 

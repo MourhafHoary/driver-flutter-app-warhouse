@@ -24,6 +24,13 @@ abstract class  LocaleKeys {
   static const login_verify = 'login.verify';
   static const login_emaily = 'login.emaily';
   static const login_resend = 'login.resend';
+  static const login_Sucpass = 'login.Sucpass';
+  static const login_sure = 'login.sure';
+  static const login_setpass = 'login.setpass';
+  static const login_createpass = 'login.createpass';
+  static const login_newpass = 'login.newpass';
+  static const login_confirmpass = 'login.confirmpass';
+  static const login_updatepass = 'login.updatepass';
   static const login = 'login';
 
 }

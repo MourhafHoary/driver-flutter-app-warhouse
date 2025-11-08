@@ -1,12 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
-import 'package:untitled1/views/auth/widgets/button_back.dart';
+import 'package:untitled1/core/component/button_back.dart';
 import 'package:untitled1/views/auth/widgets/additional_login.dart';
 import 'package:untitled1/views/auth/widgets/login_form.dart';
 import 'package:untitled1/views/auth/widgets/or_divider.dart';
 import 'package:untitled1/views/auth/widgets/signup_form.dart';
 import 'package:untitled1/views/auth/widgets/tap_selector.dart';
+
 
 class AuthPage extends StatefulWidget {
   const AuthPage({super.key});
@@ -33,6 +34,7 @@ class _AuthPageState extends State<AuthPage> {
                   const SizedBox(height: 52),
                   Center(
                     child: TapSelector(
+                      //* change the content based on the selected tap
                       isLogin: isLogin,
                       onChanged: (value) {
                         setState(() {
@@ -43,7 +45,6 @@ class _AuthPageState extends State<AuthPage> {
                   ),
                   const SizedBox(height: 72),
                   AuthPageContent(isLogin: isLogin),
-                  const ButtonBack(),
                 ],
               ),
             ),
@@ -54,6 +55,7 @@ class _AuthPageState extends State<AuthPage> {
   }
 }
 
+/// content widget
 class AuthPageContent extends StatelessWidget {
   final bool isLogin;
 
@@ -63,39 +65,40 @@ class AuthPageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return isLogin
         ? Column(
-      children: [
-        Text(
-         LocaleKeys.login_pageContentTitle.tr(),
-          style: const TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: Colors.black54,
-          ),
-        ),
-        const LoginForm(),
-        const SizedBox(height: 43),
-        const OrDivider(),
-        const SizedBox(height: 35),
-        const AdditionalLogin(),
-      ],
-    )
+            children: [
+              Text(
+                LocaleKeys.login_pageContentTitle.tr(),
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black54,
+                ),
+              ),
+              const LoginForm(),
+              const SizedBox(height: 43),
+              const OrDivider(),
+              const SizedBox(height: 35),
+              const AdditionalLogin(),
+            ],
+          )
         : Column(
-      children: [
-        Text(
-          LocaleKeys.login_signup.tr(),
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: Colors.black54,
-          ),
-        ),
-        // SignUpForm(),
-        SignUpForm(),
-        SizedBox(height: 43),
-        OrDivider(),
-        SizedBox(height: 35),
-        AdditionalLogin(),
-      ],
-    );
+            children: [
+              Text(
+                LocaleKeys.login_signup.tr(),
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black54,
+                ),
+              ),
+              //* singUp
+              const SignUpForm(),
+              const SizedBox(height: 43),
+              const OrDivider(),
+              const SizedBox(height: 35),
+              //*Additional login
+              const AdditionalLogin(),
+            ],
+          );
   }
 }

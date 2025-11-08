@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomTextFiled extends StatelessWidget {
-  const CustomTextFiled({super.key});
+  const CustomTextFiled({super.key, this.suffixIcon, this.keyBoardType,  this.obscureText=false});
+  final Widget? suffixIcon;
+  final TextInputType?  keyBoardType;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(
@@ -22,7 +25,10 @@ class CustomTextFiled extends StatelessWidget {
             width: 2,
           ),
         ),
+          suffixIcon : suffixIcon,
       ),
+      keyboardType: keyBoardType,
+      obscureText: obscureText,
     );
   }
 }
