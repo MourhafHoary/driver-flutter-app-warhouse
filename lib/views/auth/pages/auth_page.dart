@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
-import 'package:untitled1/core/component/button_back.dart';
 import 'package:untitled1/views/auth/widgets/additional_login.dart';
 import 'package:untitled1/views/auth/widgets/login_form.dart';
 import 'package:untitled1/views/auth/widgets/or_divider.dart';
@@ -21,9 +20,8 @@ class _AuthPageState extends State<AuthPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.white,
         body: SafeArea(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -50,8 +48,7 @@ class _AuthPageState extends State<AuthPage> {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
