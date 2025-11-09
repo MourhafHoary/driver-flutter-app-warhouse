@@ -19,20 +19,23 @@ class SetNewPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [ButtonBack()],
+        automaticallyImplyLeading: false,
+        actions: [Padding(
+          padding: EdgeInsets.only(left:24.sp),
+          child: const ButtonBack(),
+        )],
       ),
       body: Padding(
         padding: EdgeInsets.all(24.0.sp),
         child: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 48.h),
               Padding(
                 padding: EdgeInsets.all(8.0.sp),
                 child: const Align(
                   alignment: Alignment.centerLeft,
-                  child: ButtonBack(),
                 ),
               ),
               SizedBox(height: 26.h),
@@ -56,7 +59,7 @@ class SetNewPassword extends StatelessWidget {
               // Password field
               AppText(
                 Trans(LocaleKeys.login_newpass).tr,
-                fontFamily: 'Inter',
+                fontFamily: FontFamily.inter,
                 style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8.h),
@@ -78,7 +81,7 @@ class SetNewPassword extends StatelessWidget {
               // Confirm Password field
               AppText(
                 Trans(LocaleKeys.login_confirmpass).tr,
-                fontFamily: 'Inter',
+                fontFamily: FontFamily.inter,
                 style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 8.h),
@@ -95,7 +98,7 @@ class SetNewPassword extends StatelessWidget {
                 ),
               )),
 
-              const SizedBox(height: 26),
+              SizedBox(height: 26.h),
               CustomFiledButton(text: Trans(LocaleKeys.login_updatepass).tr),
             ],
           ),

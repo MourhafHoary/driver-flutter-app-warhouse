@@ -1,3 +1,5 @@
+import 'dart:ui' as ui;
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
@@ -22,6 +24,7 @@ class CheckYourEmail extends StatelessWidget {
       appBar: AppBar(
         //! make sure tor add this into the rest of the pages
         automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
         actions: [
           Padding(
             padding: EdgeInsets.only(left: 24.0.sp),
@@ -30,18 +33,18 @@ class CheckYourEmail extends StatelessWidget {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-          SizedBox(height: 48),
+        padding: EdgeInsets.all(24.0.sp),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          SizedBox(height: 48.h),
           AppText(
             LocaleKeys.login_check.tr(),
-            fontFamily: 'Poppins',
+            fontFamily: FontFamily.poppins,
             style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-          const SizedBox(height: 18),
+          SizedBox(height: 18.h),
           AppText(
             LocaleKeys.login_code.tr(),
-            textAlign: TextAlign.end,
+            textAlign: TextAlign.start,
             fontFamily: FontFamily.inter,
             style: const TextStyle(
                 fontSize: 20,
@@ -49,28 +52,31 @@ class CheckYourEmail extends StatelessWidget {
                 color: AppColors.gray),
           ),
           SizedBox(
-            height: 38,
+            height: 38.h
           ),
           //todo : change the direction of input
-          OtpTextField(
-            numberOfFields: 5,
-            showFieldAsBox: true,
-            focusedBorderColor: AppColors.primary,
-            borderRadius: BorderRadius.circular(10),
-            fieldWidth: 56,
+          Directionality(
+            textDirection: ui.TextDirection.ltr,
+            child: OtpTextField(
+              numberOfFields: 5,
+              showFieldAsBox: true,
+              focusedBorderColor: AppColors.primary,
+              borderRadius: BorderRadius.circular(10),
+              fieldWidth: 56,
+            ),
           ),
-          const SizedBox(height: 26),
+          SizedBox(height: 26.h),
           InkWell(
               onTap: () {
                 context.push(AppRoutes.passrest);
               },
               child: CustomFiledButton(text: LocaleKeys.login_verify.tr())),
-          const SizedBox(height: 36),
-          const Row(
+          SizedBox(height: 36.h),
+            const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AppText(
-                fontFamily: "Inter",
+                fontFamily: FontFamily.inter,
                 LocaleKeys.login_emaily,
                 style: TextStyle(
                   fontSize: 16,
@@ -80,7 +86,7 @@ class CheckYourEmail extends StatelessWidget {
               ),
               InkWell(
                   child: AppText(
-                fontFamily: "Inter",
+                fontFamily: FontFamily.inter,
                 LocaleKeys.login_resend,
                 style: TextStyle(
                     fontSize: 16,

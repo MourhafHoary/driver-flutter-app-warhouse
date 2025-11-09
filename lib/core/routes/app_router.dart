@@ -18,7 +18,7 @@ final GoRouter appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutes.forget,
-      builder: (context, state) => const ForgetPassword(),
+      builder: (context, state) =>  ForgetPassword(),
     ),
     GoRoute(
         path: AppRoutes.check,

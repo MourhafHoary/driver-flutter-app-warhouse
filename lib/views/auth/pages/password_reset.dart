@@ -6,6 +6,7 @@ import 'package:untitled1/core/component/custom_filed_button.dart';
 import 'package:untitled1/core/locallization/app_text.dart';
 import 'package:untitled1/core/routes/app_routes.dart';
 import 'package:untitled1/core/theme/app_colors.dart';
+import 'package:untitled1/gen/fonts.gen.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
 
 import '../../../core/component/button_back.dart';
@@ -17,30 +18,34 @@ class PasswordReset extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: const [ButtonBack()],
+        automaticallyImplyLeading: false,
+        actions: [Padding(
+          padding:  EdgeInsets.only(left: 24.0.sp),
+          child: const ButtonBack(),
+        )],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: EdgeInsets.all(24.0.sp),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 26.h),
             AppText(
                 LocaleKeys.login_reset.tr(),
-                fontFamily: 'Poppins',
-              style: TextStyle(
+                fontFamily: FontFamily.poppins,
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold
               ),
             ),
             SizedBox(height: 18.h),
             AppText(LocaleKeys.login_Sucpass.tr(),
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColors.gray
                 ),
-                fontFamily: 'Inter'),
+                fontFamily: FontFamily.inter),
             SizedBox(height: 36.h),
             InkWell(
               onTap: (){

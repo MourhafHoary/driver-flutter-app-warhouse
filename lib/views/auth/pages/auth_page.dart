@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
 import 'package:untitled1/views/auth/widgets/additional_login.dart';
 import 'package:untitled1/views/auth/widgets/login_form.dart';
@@ -29,7 +30,7 @@ class _AuthPageState extends State<AuthPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 52),
+                  SizedBox(height: 52.h),
                   Center(
                     child: TapSelector(
                       //* change the content based on the selected tap
@@ -41,7 +42,7 @@ class _AuthPageState extends State<AuthPage> {
                       },
                     ),
                   ),
-                  const SizedBox(height: 72),
+                  SizedBox(height: 72.h),
                   AuthPageContent(isLogin: isLogin),
                 ],
               ),
@@ -72,9 +73,9 @@ class AuthPageContent extends StatelessWidget {
                 ),
               ),
               const LoginForm(),
-              const SizedBox(height: 43),
+              SizedBox(height: 43.h),
               const OrDivider(),
-              const SizedBox(height: 35),
+              SizedBox(height: 35.h),
               const AdditionalLogin(),
             ],
           )
@@ -90,9 +91,9 @@ class AuthPageContent extends StatelessWidget {
               ),
               //* singUp
               const SignUpForm(),
-              const SizedBox(height: 43),
+              SizedBox(height: 43.h),
               const OrDivider(),
-              const SizedBox(height: 35),
+              SizedBox(height: 35.h),
               //*Additional login
               const AdditionalLogin(),
             ],
