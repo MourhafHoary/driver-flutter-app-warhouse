@@ -17,7 +17,9 @@ class PasswordReset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         actions: [Padding(
           padding:  EdgeInsets.only(left: 24.0.sp),

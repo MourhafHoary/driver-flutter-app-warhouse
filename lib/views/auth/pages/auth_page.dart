@@ -72,7 +72,7 @@ class AuthPageContent extends StatelessWidget {
                   color: Colors.black54,
                 ),
               ),
-              const LoginForm(),
+              LoginForm(),
               SizedBox(height: 43.h),
               const OrDivider(),
               SizedBox(height: 35.h),
@@ -90,7 +90,7 @@ class AuthPageContent extends StatelessWidget {
                 ),
               ),
               //* singUp
-              const SignUpForm(),
+              SignUpForm(),
               SizedBox(height: 43.h),
               const OrDivider(),
               SizedBox(height: 35.h),

@@ -8,7 +8,7 @@ import 'package:untitled1/core/locallization/app_text.dart';
 import 'package:untitled1/core/theme/app_colors.dart';
 import 'package:untitled1/gen/fonts.gen.dart';
 import 'package:untitled1/translations/locale_keys.g.dart';
-import '../../../controllers/auth_controller/passeord_controller.dart';
+import '../../../controllers/auth_controller/password_controller.dart';
 import '../../../core/component/button_back.dart';
 
 class SetNewPassword extends StatelessWidget {
@@ -18,7 +18,10 @@ class SetNewPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        forceMaterialTransparency: true,
+        backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
         actions: [Padding(
           padding: EdgeInsets.only(left:24.sp),

@@ -9,7 +9,7 @@ class OrDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return     Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
@@ -20,7 +20,7 @@ class OrDivider extends StatelessWidget {
         const SizedBox(width: 16),
          Text(
           LocaleKeys.login_or.tr(),
-          style: TextStyle(color: AppColors.white2),
+          style: const TextStyle(color: AppColors.white2),
         ),
         const SizedBox(width: 16),
         Container(
