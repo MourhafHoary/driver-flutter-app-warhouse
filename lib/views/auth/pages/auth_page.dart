@@ -18,7 +18,6 @@ class AuthPage extends StatefulWidget {
 
 class _AuthPageState extends State<AuthPage> {
   bool isLogin = true;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,6 +71,7 @@ class AuthPageContent extends StatelessWidget {
                   color: Colors.black54,
                 ),
               ),
+              //* login
               LoginForm(),
               SizedBox(height: 43.h),
               const OrDivider(),

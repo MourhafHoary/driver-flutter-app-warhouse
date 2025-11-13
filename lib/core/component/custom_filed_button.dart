@@ -6,12 +6,13 @@ import 'package:untitled1/gen/fonts.gen.dart';
 
 class CustomFiledButton extends StatelessWidget {
   final String text;
-
-  const CustomFiledButton({super.key, required this.text});
+  final VoidCallback? onPressed ;
+  const CustomFiledButton({super.key, required this.text, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onPressed,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12.r),
@@ -28,5 +29,6 @@ class CustomFiledButton extends StatelessWidget {
                 fontFamily: FontFamily.poppins)),
       ),
     );
+
   }
 }

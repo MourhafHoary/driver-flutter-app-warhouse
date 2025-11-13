@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart' ;
 
 class PasswordController extends GetxController {
+
+  final passwordController = TextEditingController();
   var isObscureNew = true.obs;
   var isObscureConfirm = true.obs;
 

@@ -5,9 +5,11 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled1/controllers/auth_controller/email_controller.dart';
 import 'package:untitled1/controllers/auth_controller/password_controller.dart';
+import 'package:untitled1/controllers/auth_controller/username_controller.dart';
 import 'package:untitled1/core/component/custom_filed_button.dart';
 import 'package:untitled1/core/component/custom_text_filed.dart';
 import 'package:untitled1/gen/fonts.gen.dart';
+import 'package:untitled1/models/auth_model/signup.dart';
 
 import '../../../core/locallization/app_text.dart';
 import '../../../translations/locale_keys.g.dart';
@@ -18,6 +20,7 @@ class SignUpForm extends StatelessWidget {
 
   final EmailController controller = Get.put(EmailController());
   final PasswordController controllerp = Get.put(PasswordController());
+  final UsernameController controlleru = Get.put(UsernameController());
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +29,25 @@ class SignUpForm extends StatelessWidget {
         children: [
         AppText(Trans(LocaleKeys.login_username).tr, fontFamily: FontFamily.inter,style: TextStyle(fontSize: 16.sp, fontWeight: FontWeight.w500),),
          SizedBox(height: 8.h),
-         const CustomTextFiled(),
+          CustomTextFiled(
+           controller: controlleru.usernameController,
+            onChanged: controlleru.validateUsername,
+         ),
+          Obx( () => Align(
+            alignment: Alignment.centerRight,
+            child: Text(
+              controlleru.isValid.value
+                  ? 'Valid username'
+                  : 'Username must be at least 3 characters',
+              style: TextStyle(
+                color: controlleru.isValid.value
+                    ? Colors.green
+                    : Colors.red,
+
+              ),
+            ),
+          )
+          ),
          SizedBox(height: 16.h,),
          AppText(Trans(LocaleKeys.login_email).tr, fontFamily: FontFamily.inter,),
          SizedBox(height: 8.h,),
@@ -82,7 +103,12 @@ class SignUpForm extends StatelessWidget {
             ),
           )),
           SizedBox(height: 35.h,),
-         CustomFiledButton(text: Trans(LocaleKeys.login_continue).tr,)
+         CustomFiledButton(
+           text: Trans(LocaleKeys.login_continue).tr,
+         onPressed: () async {
+            await signUp();
+         },
+         )
     ]
     );
   }
