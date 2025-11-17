@@ -8,6 +8,7 @@ class CustomTextFiled extends StatelessWidget {
     this.obscureText = false,
     this.controller,
     this.onChanged,
+    this.errorText,
   });
 
   final Widget? suffixIcon;
@@ -15,31 +16,68 @@ class CustomTextFiled extends StatelessWidget {
   final bool obscureText;
   final TextEditingController? controller;
   final Function(String)? onChanged;
+  final String? errorText;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      onChanged: onChanged,
-      decoration: InputDecoration(
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(
-            color: Colors.grey,
-            width: 1.5,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+        TextFormField(
+          controller: controller,
+          onChanged: onChanged,
+          obscureText: obscureText,
+          keyboardType: keyBoardType,
+          decoration: InputDecoration(
+            // === Border ===
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Colors.grey,
+                width: 1.5,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Colors.blue,
+                width: 2,
+              ),
+            ),
+
+            // error border
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Colors.grey,
+                width: 1.5,
+              ),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: const BorderSide(
+                color: Colors.blue,
+                width: 2,
+              ),
+            ),
+
+            suffixIcon: suffixIcon,
+
+            errorStyle: const TextStyle(
+              fontSize: 12,
+              height: 1.0,
+              color: Colors.red,
+            ),
+
+            errorText: errorText,
           ),
         ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(
-            color: Colors.blue,
-            width: 2,
-          ),
-        ),
-        suffixIcon: suffixIcon,
-      ),
-      keyboardType: keyBoardType,
-      obscureText: obscureText,
+
+        // إمكانية إضافة مساحة بسيطة تحت الخطأ
+        if (errorText != null && errorText!.isNotEmpty)
+          const SizedBox(height: 4),
+      ],
     );
   }
 }

@@ -1,4 +1,4 @@
-const String linkServerName = "http://192.168.1.100/invmanger" ;
+const String linkServerName = "http://192.168.43.194/invmanger" ;
 
 
 //Auth

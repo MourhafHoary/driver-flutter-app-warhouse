@@ -1,19 +1,18 @@
-import 'package:easy_localization/easy_localization.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:untitled1/controllers/auth_controller/email_controller.dart';
 import 'package:untitled1/controllers/auth_controller/password_controller.dart';
 import 'package:untitled1/controllers/auth_controller/username_controller.dart';
 import 'package:untitled1/core/component/custom_filed_button.dart';
 import 'package:untitled1/core/component/custom_text_filed.dart';
+import 'package:untitled1/core/theme/app_colors.dart';
 import 'package:untitled1/gen/fonts.gen.dart';
 import 'package:untitled1/models/auth_model/signup.dart';
 
 import '../../../core/locallization/app_text.dart';
 import '../../../translations/locale_keys.g.dart';
-import 'login_form.dart';
 
 class SignUpForm extends StatelessWidget {
    SignUpForm({super.key});
@@ -75,6 +74,8 @@ class SignUpForm extends StatelessWidget {
          AppText(Trans(LocaleKeys.login_password).tr, fontFamily: FontFamily.inter),
           SizedBox(height: 8.h,),
           Obx( ()=> CustomTextFiled(
+            onChanged: controllerp.validatePassword,
+            controller: controllerp.passwordController,
             keyBoardType: TextInputType.visiblePassword,
             obscureText: controllerp.isObscureNew.value,
             suffixIcon: InkWell(
@@ -83,14 +84,20 @@ class SignUpForm extends StatelessWidget {
                 controllerp.isObscureNew.value
                     ? Icons.visibility_off
                     : Icons.visibility,
+                color: AppColors.gray,
               ),
             ),
+            errorText: controllerp.isPasswordValid.value
+                ? null
+                : controllerp.passwordError.value,
           ),
           ),
           SizedBox(height: 16.h,),
          AppText(Trans(LocaleKeys.login_confirm).tr, fontFamily: FontFamily.inter),
           SizedBox(height: 8.h,),
           Obx(() => CustomTextFiled(
+            onChanged: controllerp.validateConfirm,
+            controller: controllerp.confirmController,
             keyBoardType: TextInputType.visiblePassword,
             obscureText: controllerp.isObscureConfirm.value,
             suffixIcon: InkWell(
@@ -99,14 +106,19 @@ class SignUpForm extends StatelessWidget {
                 controllerp.isObscureConfirm.value
                     ? Icons.visibility_off
                     : Icons.visibility,
+                color: AppColors.gray,
               ),
             ),
+              errorText: controllerp.isConfirmValid.value
+                  ? null
+                  : controllerp.confirmError.value,
+
           )),
           SizedBox(height: 35.h,),
          CustomFiledButton(
            text: Trans(LocaleKeys.login_continue).tr,
          onPressed: () async {
-            await signUp();
+            await signUp(context);
          },
          )
     ]
